@@ -1,0 +1,759 @@
+<?xml version="1.0" ?>
+<robot name="greybot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find greybot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find greybot_description)/urdf/greybot.trans" />
+<xacro:include filename="$(find greybot_description)/urdf/greybot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.7177496842797606e-17 -2.6467805879211377e-36 0.064"/>
+    <mass value="1.3135009177288446"/>
+    <inertia ixx="0.004258" ixy="0.0" ixz="-0.0" iyy="0.009288" iyz="0.0" izz="0.013544"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="coupling_b1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.1 -0.07000000000004185 0.07094199242025702"/>
+    <mass value="0.011060936379359195"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_b1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_b1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="coupling_b2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.1 0.06999999999995812 0.07094199242025702"/>
+    <mass value="0.011060936379359195"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_b2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_b2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="coupling_b3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.10000000000000002 -0.07000000000004182 0.07094199242025703"/>
+    <mass value="0.011060936379359195"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_b3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_b3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="coupling_b4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.10000000000000002 0.06999999999995815 0.07094199242025702"/>
+    <mass value="0.011060936379359195"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_b4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_b4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="standoff_b1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.71445146547012e-17 5.551115123125783e-17 0.11219999999999997"/>
+    <mass value="0.02774419012201502"/>
+    <inertia ixx="3.6e-05" ixy="0.0" ixz="-0.0" iyy="3.6e-05" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1 0.07 -0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_b1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1 0.07 -0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_b1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="standoff_b2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.71445146547012e-17 -5.551115123125783e-17 0.11219999999999997"/>
+    <mass value="0.02774419012201502"/>
+    <inertia ixx="3.6e-05" ixy="-0.0" ixz="-0.0" iyy="3.6e-05" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1 -0.07 -0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_b2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1 -0.07 -0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_b2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="standoff_b4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.551115123125783e-17 -5.551115123125783e-17 0.11219999999999994"/>
+    <mass value="0.02774419012201502"/>
+    <inertia ixx="3.6e-05" ixy="0.0" ixz="0.0" iyy="3.6e-05" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.1 -0.07 -0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_b4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.1 -0.07 -0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_b4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="standoff_b3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="8.326672684688674e-17 4.163336342344337e-17 0.11219999999999994"/>
+    <mass value="0.02774419012201502"/>
+    <inertia ixx="3.6e-05" ixy="-0.0" ixz="0.0" iyy="3.6e-05" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.1 0.07 -0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_b3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.1 0.07 -0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_b3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="middle_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.8933140311675675e-17 2.8812472243218297e-18 0.043000000000000066"/>
+    <mass value="1.7183464031154387"/>
+    <inertia ixx="0.009979" ixy="0.0" ixz="0.0" iyy="0.009979" iyz="-0.0" izz="0.019955"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.162"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/middle_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.162"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/middle_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="coupling_t2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0999999999999999 0.07000000000004189 0.21194199242025732"/>
+    <mass value="0.011060936379359195"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_t2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_t2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="coupling_t1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.09999999999999996 -0.06999999999995825 0.21194199242025696"/>
+    <mass value="0.011060936379359195"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_t1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_t1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="coupling_t4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.10000000000000002 0.07000000000004189 0.21194199242025724"/>
+    <mass value="0.011060936379359195"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="-0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_t4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_t4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="coupling_t3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.10000000000000002 -0.06999999999995828 0.21194199242025732"/>
+    <mass value="0.011060936379359195"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_t3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/coupling_t3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="standoff_t2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.326672684688674e-17 0.14000000000000007 0.3128000000000003"/>
+    <mass value="0.02774419012201502"/>
+    <inertia ixx="3.6e-05" ixy="-0.0" ixz="-0.0" iyy="3.6e-05" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1 0.07 0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_t2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1 0.07 0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_t2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="standoff_t1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.326672684688674e-17 -0.14000000000000007 0.3128000000000003"/>
+    <mass value="0.02774419012201502"/>
+    <inertia ixx="3.6e-05" ixy="0.0" ixz="-0.0" iyy="3.6e-05" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1 -0.07 0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_t1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1 -0.07 0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_t1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="standoff_t3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="8.326672684688674e-17 -0.14000000000000007 0.3128000000000003"/>
+    <mass value="0.02774419012201502"/>
+    <inertia ixx="3.6e-05" ixy="-0.0" ixz="0.0" iyy="3.6e-05" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.1 -0.07 0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_t3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.1 -0.07 0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_t3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="standoff_t4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.551115123125783e-17 0.14000000000000007 0.3128000000000003"/>
+    <mass value="0.02774419012201502"/>
+    <inertia ixx="3.6e-05" ixy="0.0" ixz="0.0" iyy="3.6e-05" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.1 0.07 0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_t4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.1 0.07 0.0298"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/standoff_t4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.0774429986797753e-17 2.0774429986797753e-17 0.06400000000000061"/>
+    <mass value="1.7183464031154387"/>
+    <inertia ixx="0.009979" ixy="0.0" ixz="-0.0" iyy="0.009979" iyz="-0.0" izz="0.019955"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.283"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/top_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.283"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/top_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="imu_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00027253344099404503 -0.0026451860323988808 0.20247934840875956"/>
+    <mass value="0.003859300658293327"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-2.4e-05 -0.002 -0.000364"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-2.4e-05 -0.002 -0.000364"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="kinect_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.1387314861670969 -0.030456282068582342 0.29581897608954666"/>
+    <mass value="5.55950342662314"/>
+    <inertia ixx="0.026508" ixy="-4e-06" ixz="-4.8e-05" iyy="0.004257" iyz="-1e-06" izz="0.025733"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1397 -0.03048 0.040132"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/kinect_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1397 -0.03048 0.040132"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/kinect_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="laser_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.04676661841959851 0.019908073664241046 0.3836491842472231"/>
+    <mass value="1.3392964352221826"/>
+    <inertia ixx="0.000619" ixy="-1e-06" ixz="0.000159" iyy="0.000967" iyz="-3e-06" izz="0.001105"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.042 0.02 -0.000119"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/laser_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.042 0.02 -0.000119"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/laser_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.013999999999912202 -0.05903060074973735 0.04874999999999999"/>
+    <mass value="0.3135290339727778"/>
+    <inertia ixx="7.4e-05" ixy="0.0" ixz="-0.0" iyy="4.7e-05" iyz="0.0" izz="7.4e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.012 0.00025 0.005"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/motor_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.012 0.00025 0.005"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/motor_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.013999999999912215 0.05903060074973731 0.04874999999999985"/>
+    <mass value="0.3135290339727778"/>
+    <inertia ixx="7.4e-05" ixy="-0.0" ixz="0.0" iyy="4.7e-05" iyz="0.0" izz="7.4e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.012 -0.00025 0.005"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/motor_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.012 -0.00025 0.005"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/motor_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.013999999999999974 -0.12044316139562275 0.043750000000000094"/>
+    <mass value="0.17760437141666585"/>
+    <inertia ixx="0.000165" ixy="-0.0" ixz="-0.0" iyy="0.000313" iyz="0.0" izz="0.000165"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.012 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.012 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.01400000000000005 0.11995683860437735 0.04374999999999979"/>
+    <mass value="0.17760437141666585"/>
+    <inertia ixx="0.000165" ixy="0.0" ixz="-0.0" iyy="0.000313" iyz="-0.0" izz="0.000165"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.012 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.012 -0.0 -0.0"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor_front_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.11000000000000001 1.7481953804716273e-18 -0.028858695652173888"/>
+    <mass value="0.31905818640317085"/>
+    <inertia ixx="0.000107" ixy="0.0" ixz="-0.0" iyy="0.000107" iyz="0.0" izz="3.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0625"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/castor_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.0625"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/castor_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor_back_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.10999999999999999 1.7481953804716273e-18 -0.028858695652173888"/>
+    <mass value="0.31905818640317085"/>
+    <inertia ixx="0.000107" ixy="-0.0" ixz="-0.0" iyy="0.000107" iyz="0.0" izz="3.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0625"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/castor_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0625"/>
+    <geometry>
+      <mesh filename="package://greybot_description/meshes/castor_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="coupling_joint_b1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="coupling_b1_1"/>
+</joint>
+
+<joint name="coupling_joint_b2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="coupling_b2_1"/>
+</joint>
+
+<joint name="coupling_joint_b3" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="coupling_b3_1"/>
+</joint>
+
+<joint name="coupling_joint_b4" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="coupling_b4_1"/>
+</joint>
+
+<joint name="standoff_joint_b1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.1 -0.07 0.0298"/>
+  <parent link="base_link"/>
+  <child link="standoff_b1_1"/>
+</joint>
+
+<joint name="standoff_joint_b2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.1 0.07 0.0298"/>
+  <parent link="base_link"/>
+  <child link="standoff_b2_1"/>
+</joint>
+
+<joint name="standoff_joint_b4" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.1 0.07 0.0298"/>
+  <parent link="base_link"/>
+  <child link="standoff_b4_1"/>
+</joint>
+
+<joint name="standoff_joint_b3" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.1 -0.07 0.0298"/>
+  <parent link="base_link"/>
+  <child link="standoff_b3_1"/>
+</joint>
+
+<joint name="middle_link_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.162"/>
+  <parent link="base_link"/>
+  <child link="middle_link_1"/>
+</joint>
+
+<joint name="coupling_joint_t2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="coupling_t2_1"/>
+</joint>
+
+<joint name="coupling_joint_t1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="coupling_t1_1"/>
+</joint>
+
+<joint name="coupling_joint_t4" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="coupling_t4_1"/>
+</joint>
+
+<joint name="coupling_joint_t3" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="coupling_t3_1"/>
+</joint>
+
+<joint name="standoff_joint_t2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.1 -0.07 -0.0298"/>
+  <parent link="base_link"/>
+  <child link="standoff_t2_1"/>
+</joint>
+
+<joint name="standoff_joint_t1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.1 0.07 -0.0298"/>
+  <parent link="base_link"/>
+  <child link="standoff_t1_1"/>
+</joint>
+
+<joint name="standoff_joint_t3" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.1 0.07 -0.0298"/>
+  <parent link="base_link"/>
+  <child link="standoff_t3_1"/>
+</joint>
+
+<joint name="standoff_joint_t4" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.1 -0.07 -0.0298"/>
+  <parent link="base_link"/>
+  <child link="standoff_t4_1"/>
+</joint>
+
+<joint name="top_link_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.283"/>
+  <parent link="base_link"/>
+  <child link="top_link_1"/>
+</joint>
+
+<joint name="imu_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="2.4e-05 0.002 0.000364"/>
+  <parent link="base_link"/>
+  <child link="imu_1"/>
+</joint>
+
+<joint name="kinect_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.1397 0.03048 -0.040132"/>
+  <parent link="base_link"/>
+  <child link="kinect_1"/>
+</joint>
+
+<joint name="laser_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.042 -0.02 0.000119"/>
+  <parent link="base_link"/>
+  <child link="laser_1"/>
+</joint>
+
+<joint name="motor_left_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.012 -0.00025 -0.005"/>
+  <parent link="base_link"/>
+  <child link="motor_left_1"/>
+</joint>
+
+<joint name="motor_right_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.012 0.00025 -0.005"/>
+  <parent link="base_link"/>
+  <child link="motor_right_1"/>
+</joint>
+
+<joint name="wheel_left_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.00025 0.005"/>
+  <parent link="motor_left_1"/>
+  <child link="wheel_left_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wheel_right_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 -0.00025 0.005"/>
+  <parent link="motor_right_1"/>
+  <child link="wheel_right_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="castor_front_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0625"/>
+  <parent link="base_link"/>
+  <child link="castor_front_1"/>
+</joint>
+
+<joint name="castor_back_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0625"/>
+  <parent link="base_link"/>
+  <child link="castor_back_1"/>
+</joint>
+
+</robot>

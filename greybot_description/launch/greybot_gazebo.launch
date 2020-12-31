@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<launch>
+
+<!--  greybot -->
+    <param command="$(find xacro)/xacro $(find greybot_description)/urdf/greybot.xacro" name="robot_description"/>
+
+<!-- empty gazebo world -->
+   <include file="$(find greybot_description)/launch/gazebo.launch" /> 
+
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0.006"/>
+
+<!-- rviz node -->
+    <node name="rviz" pkg="rviz" type="rviz" args=" -d $(find greybot_description)/rviz/urdf.rviz" />
+
+  <!-- joint state publisher -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+  <param name="use_gui" value="True" />
+  </node> 
+  
+  <!-- start robot state publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+  
+ <!-- Spawn the robot model -->
+    <node name="spawm_urdf" pkg="gazebo_ros" type="spawn_model" output="screen" 
+        args="-urdf -param robot_description -model ebot -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+</launch>
